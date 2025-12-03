@@ -1,0 +1,146 @@
+/* ------------------------------------- */
+/* 基礎設定 & 容器 */
+/* ------------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* 淺藍白背景 */
+    color: #333;
+}
+
+header {
+    background-color: #007bff; /* 主藍色 */
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* 讓標題固定在頂部 */
+    top: 0;
+    z-index: 10;
+}
+
+/* 核心 App 容器 - 使用 Flexbox 實現左右佈局 */
+#schedule-app {
+    display: flex;
+    min-height: calc(100vh - 60px); /* 確保內容撐滿螢幕高度 */
+}
+
+/* 讓非當前顯示的內容隱藏 */
+.hidden {
+    display: none !important;
+}
+
+/* ------------------------------------- */
+/* 左側導航欄 (Sidebar) 樣式 */
+/* ------------------------------------- */
+#day-navigation {
+    width: 90px; /* 側邊欄寬度 */
+    background-color: #ffffff; /* 白色背景 */
+    border-right: 1px solid #dee2e6;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-day-btn {
+    background: none;
+    border: none;
+    padding: 15px 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    outline: none;
+    border-radius: 0 20px 20px 0; /* 圓角只在右側 */
+}
+
+.nav-day-btn:hover {
+    background-color: #e9ecef;
+}
+
+.nav-day-btn.active {
+    background-color: #007bff; /* 藍色背景表示選中 */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-day-btn .day-num {
+    display: block;
+    font-size: 1.1em;
+}
+
+.nav-day-btn .day-date {
+    display: block;
+    font-size: 0.8em;
+}
+
+
+/* ------------------------------------- */
+/* 右側內容欄 樣式 */
+/* ------------------------------------- */
+#day-content-area {
+    flex-grow: 1; /* 佔據剩餘空間 */
+    padding: 15px;
+    overflow-y: auto; /* 允許內容滾動 */
+}
+
+.day-schedule-content h2 {
+    color: #007bff; /* 藍色標題 */
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 景點卡片精緻化 */
+.activity {
+    background-color: white;
+    border-left: 5px solid #007bff; /* 藍色線條點綴 */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 提升質感 */
+}
+
+.activity h3 {
+    color: #495057; /* 深灰色的景點名稱 */
+    margin-top: 0;
+    font-size: 1.2em;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #e9ecef;
+}
+
+.time {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* 交通方式文字 */
+.activity p strong {
+    color: #0056b3; 
+}
+
+
+/* ------------------------------------- */
+/* 按鈕樣式 (符合範例圖的精緻化按鈕) */
+/* ------------------------------------- */
+.map-link {
+    display: inline-block;
+    background-color: #28a745; /* 使用綠色按鈕突出地圖功能 */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px; /* 圓角按鈕 */
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.map-link:active {
+    background-color: #218838;
+    transform: translateY(1px); /* 點擊時下沉效果 */
+}
