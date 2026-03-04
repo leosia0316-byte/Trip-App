@@ -14,94 +14,88 @@
     </header>
 
 <main id="schedule-app">
-    
     <aside id="day-navigation">
-        <button class="nav-day-btn active" onclick="showDay('day1')"><span class="day-num">D1</span><span class="day-date">3/21</span></button>
-        <button class="nav-day-btn" onclick="showDay('day2')"><span class="day-num">D2</span><span class="day-date">3/22</span></button>
-        <button class="nav-day-btn" onclick="showDay('day3')"><span class="day-num">D3</span><span class="day-date">3/23</span></button>
-        <button class="nav-day-btn" onclick="showDay('day4')"><span class="day-num">D4</span><span class="day-date">3/24</span></button>
-        <button class="nav-day-btn" onclick="showDay('day5')"><span class="day-num">D5</span><span class="day-date">3/25</span></button>
+        <button class="nav-day-btn active" onclick="showDay('day1')"><span class="day-num">D1</span></button>
+        <button class="nav-day-btn" onclick="showDay('day2')"><span class="day-num">D2</span></button>
+        <button class="nav-day-btn" onclick="showDay('day3')"><span class="day-num">D3</span></button>
+        <button class="nav-day-btn" onclick="showDay('day4')"><span class="day-num">D4</span></button>
+        <button class="nav-day-btn" onclick="showDay('day5')"><span class="day-num">D5</span></button>
+        <button class="nav-day-btn nav-fee-btn" onclick="showDay('expenses')">
+            <span class="day-num">💰</span>
+            <span class="day-date">費用</span>
+        </button>
     </aside>
 
     <div id="day-content-area">
-
         <section class="day-schedule-content" id="day1">
             <h2>📅 3/21(六) 入境大阪</h2>
             <div class="activity travel-item">
                 <h3>🛫 桃園(TPE) ➡️ 關西(KIX)</h3>
-                <p>04:00 接送 | 07:00 起飛 | 10:25 抵達 </p>
-                <p>🚇 交通：13:05 搭南海電鐵 Rapi:t 至天下茶屋轉地鐵北濱站 </p>
-                <a href="https://www.google.com/maps/d/u/0/edit?mid=1QVR5ut8Q1bAY33Rho9cjYhgLdeeIER8&ll=34.714069469802865%2C135.51406&z=10" target="_blank" class="map-link">關西機場地圖 🗺️ </a>
+                <p>07:00 起飛 | 10:25 抵達</p>
             </div>
+
+            <details class="transport-collapse">
+                <summary>🚌 交通：機場至飯店 (點擊展開路徑)</summary>
+                <div class="transport-info">
+                    <p>1. 搭乘 13:05 南海電鐵 Rapi:t 至「天下茶屋站」。</p>
+                    <p>2. 轉乘地鐵堺筋線（北千里方向）至「北濱站」。</p>
+                    <p>3. 4號出口出來步行即達。</p>
+                </div>
+            </details>
+
             <div class="activity hotel-item">
                 <h3>🏨 大阪北濱布萊頓城市飯店</h3>
-                <p>14:00 放行李 | 16:15 正式 Check-in </p>
-                <a href="https://www.google.com/maps/place/%E5%A4%A7%E9%98%AA%E5%8C%97%E6%BF%B1%E5%B8%83%E8%90%8A%E9%A0%93%E5%9F%8E%E5%B8%82%E9%A3%AF%E5%BA%97/@34.6888639,135.5068312,386m/data=!3m1!1e3!4m9!3m8!1s0x6000e6dfb0754e37:0xaf9c50bd50bb6fd!5m2!4m1!1i2!8m2!3d34.6890018!4d135.5079962!16s%2Fg%2F11btv66j9c?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">飯店地圖 🏨 </a>
+                <a href="https://www.google.com/maps/..." target="_blank" class="map-link">飯店地圖 🏨</a>
             </div>
+
+            <details class="transport-collapse">
+                <summary>🚇 交通：前往大阪城</summary>
+                <div class="transport-info">
+                    <p>從「北濱站」搭乘地鐵堺筋線至「天滿橋站」。</p>
+                </div>
+            </details>
+
             <div class="activity">
-                <h3>🏯 大阪城 & 心齋橋</h3>
-                <p>14:30 大阪城 ➔ 17:00 千代松勝蓋飯 ➔ 18:10 心齋橋焙煎所 </p>
-                <a href="https://maps.app.goo.gl/K6S8G2QxG2U2xG2U2" target="_blank" class="map-link">查看導航地圖 🗺️</a>
+                <h3>🏯 大阪城探索</h3>
             </div>
         </section>
 
-        <section class="day-schedule-content hidden" id="day2">
-            <h2>📅 3/22(日) 梅田百貨行程</h2>
-            <div class="activity">
-                <h3>🏛️ 大阪今昔生活館</h3>
-                <p>10:00 參觀日本舊街景 </p>
-            </div>
-            <div class="activity">
-                <h3>🛍️ 梅田百貨巡禮</h3>
-                <p>午餐：大阪麵哲 ➔ 大丸梅田 (寶可夢中心13F、HARBS 6F) </p>
-                <p>轉蛋：HEP FIVE、阪急三番街 #C-pla </p>
-            </div>
-        </section>
-
-        <section class="day-schedule-content hidden" id="day3">
-            <h2>📅 3/23(一) 京都宇治一日遊</h2>
-            <div class="activity">
-                <h3>⛩️ 伏見稻荷 ➡️ 清水寺</h3>
-                <p>06:50 千本鳥居拍無人照 ➔ 09:30 和服體驗 </p>
-                <a href="https://ewha-yifu.com/zh-tw/shops/kyoto-area/planlist-kyoto/kyoto-couple-plan/" target="_blank" class="map-link">和服預約細節 👘 </a>
-            </div>
-            <div class="activity">
-                <h3>🍵 宇治老街</h3>
-                <p>15:30 平等院表參道 ➔ 中村藤吉 ➔ 伊藤久右衛門 </p>
-            </div>
-        </section>
-
-        <section class="day-schedule-content hidden" id="day4">
-            <h2>📅 3/24(二) 日本環球影城</h2>
-            <div class="activity travel-item">
-                <h3>🎢 USJ 全日攻略</h3>
-                <p>07:40 到達入口 | 09:00 開園 </p>
-                <a href="https://maps.app.goo.gl/UxmytmvfEtgEvQ4D6" target="_blank" class="map-link">USJ APP 抽整理券 📱 </a>
-            </div>
-            <div class="activity">
-                <h3>🪄 哈利波特咒語地點</h3>
-                <p>共有 8 處互動點：霍格華茲行李箱、活米村噴火煙囪等 </p>
+        <section class="day-schedule-content hidden" id="expenses">
+            <h2>💰 旅遊費用明細 (2人)</h2>
+            <div class="fee-table-container">
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>金額 (NTD)</th>
+                            <th>狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>飯店 (2人/4晚)</td><td>$13,059</td><td>✅ 已付</td></tr>
+                        <tr><td>機票 (虎航 2人)</td><td>$24,874</td><td>✅ 已付</td></tr>
+                        <tr><td>環球影城門票</td><td>$13,042</td><td>✅ 已付</td></tr>
+                        <tr><td>機場接送 (桃園)</td><td>$2,100</td><td>✅ 已付</td></tr>
+                        <tr><td>和服體驗</td><td>$1,876</td><td>-</td></tr>
+                        <tr><td>USJ 道具租借</td><td>$2,110</td><td>-</td></tr>
+                        <tr><td>網路 (2人)</td><td>$436</td><td>-</td></tr>
+                        <tr><td>京阪一日券</td><td>$670</td><td>-</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                            <td>總計估算</td>
+                            <td colspan="2">$58,167</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </section>
-
-        <section class="day-schedule-content hidden" id="day5">
-            <h2>📅 3/25(三) 賦歸與費用統計</h2>
-            <div class="activity food-item" style="background-color: #fcf3cf;">
-                <h3>💰 總費用結算 (2人)</h3>
-                <p>機票：$24,874 | 住宿：$13,059 | USJ：$13,042 </p>
-                <p><strong>💡 總預算支出：約 NT$ 57,447 (已付清項目為主) </strong></p>
-            </div>
-            <div class="activity travel-item">
-                <h3>🛫 返回台灣</h3>
-                <p>15:35 南海電鐵 ➔ 18:55 起飛 ➔ 23:00 到家 </p>
-            </div>
-        </section>
-
     </div>
 </main>
     
     <script src="script.js"></script> 
 </body>
 </html>
+
 
 
