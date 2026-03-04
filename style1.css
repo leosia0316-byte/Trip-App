@@ -112,6 +112,52 @@ header {
     transform: rotate(180deg);
 }
 
+    /* 交通路線流程圖樣式 */
+.route-container {
+    padding: 5px 0 5px 10px;
+    border-left: 2px solid #007bff; /* 這條是連接點的垂直線 */
+    margin-left: 10px;
+}
+
+.route-step {
+    position: relative;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+.route-step:last-child {
+    padding-bottom: 0;
+}
+
+/* 站點圓點 */
+.route-dot {
+    position: absolute;
+    left: -7px; /* 剛好壓在 border-left 上 */
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.route-dot.last {
+    background-color: #007bff; /* 最後一站實心顯示 */
+}
+
+.route-text strong {
+    display: block;
+    font-size: 1em;
+    color: #333;
+}
+
+.route-text p {
+    margin: 2px 0 0 0;
+    font-size: 0.85em;
+    color: #666;
+}
+
 .transport-info {
     padding: 10px 15px;
     background: #f8fafc;
@@ -216,3 +262,4 @@ header {
     transform: translateY(1px); /* 點擊時下沉效果 */
 
 }
+
