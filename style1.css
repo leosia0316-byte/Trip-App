@@ -75,6 +75,77 @@ header {
 .nav-day-btn .day-date {
     display: block;
     font-size: 0.8em;
+
+    /* 側邊欄費用按鈕顏色區分 */
+.nav-fee-btn.active {
+    background-color: #ffc107 !important; /* 金色 */
+    color: #333 !important;
+}
+
+/* 交通收合樣式 */
+.transport-collapse {
+    margin: 10px 0;
+    background: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transport-collapse summary {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #495057;
+    cursor: pointer;
+    list-style: none; /* 隱藏預設箭頭 */
+    display: flex;
+    align-items: center;
+}
+
+.transport-collapse summary::before {
+    content: '▼';
+    margin-right: 10px;
+    font-size: 0.8em;
+    transition: 0.3s;
+}
+
+.transport-collapse[open] summary::before {
+    transform: rotate(180deg);
+}
+
+.transport-info {
+    padding: 10px 15px;
+    background: #f8fafc;
+    font-size: 0.85em;
+    border-top: 1px solid #dee2e6;
+    line-height: 1.6;
+}
+
+/* 費用表格樣式 */
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.fee-table th, .fee-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.fee-table th {
+    background: #007bff;
+    color: white;
+}
+
+.total-row {
+    background: #fff3cd;
+    font-weight: bold;
+    font-size: 1.1em;
+}
 }
 
 
@@ -143,4 +214,5 @@ header {
 .map-link:active {
     background-color: #218838;
     transform: translateY(1px); /* 點擊時下沉效果 */
+
 }
