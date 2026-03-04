@@ -240,6 +240,27 @@ header {
     color: #0056b3; 
 }
 
+/* 調整側邊欄按鈕，適應較長文字 */
+#day-navigation {
+    width: 110px; /* 稍微加寬一點 */
+}
+
+.nav-day-btn .day-num {
+    font-size: 0.85em; /* 日期縮小一點點 */
+    display: block;
+    color: #666;
+}
+
+.nav-day-btn.active .day-num {
+    color: #fff;
+}
+
+.nav-day-btn .day-date {
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
 
 /* ------------------------------------- */
 /* 按鈕樣式 (符合範例圖的精緻化按鈕) */
@@ -262,4 +283,5 @@ header {
     transform: translateY(1px); /* 點擊時下沉效果 */
 
 }
+
 
