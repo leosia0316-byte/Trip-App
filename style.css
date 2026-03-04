@@ -34,8 +34,9 @@ header {
 /* ------------------------------------- */
 /* 左側導航欄 (Sidebar) 樣式 */
 /* ------------------------------------- */
+/* 調整側邊欄按鈕，適應較長文字 */
 #day-navigation {
-    width: 90px; /* 側邊欄寬度 */
+    width: 110px; /* 稍微加寬一點 */
     background-color: #ffffff; /* 白色背景 */
     border-right: 1px solid #dee2e6;
     padding: 5px 0;
@@ -68,130 +69,26 @@ header {
 }
 
 .nav-day-btn .day-num {
+    font-size: 0.85em; /* 日期縮小一點點 */
     display: block;
-    font-size: 1.1em;
+    color: #666;
+}
+
+.nav-day-btn.active .day-num {
+    color: #fff;
 }
 
 .nav-day-btn .day-date {
     display: block;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1.2;
+}
 
-    /* 側邊欄費用按鈕顏色區分 */
+/* 側邊欄費用按鈕顏色區分 */
 .nav-fee-btn.active {
     background-color: #ffc107 !important; /* 金色 */
     color: #333 !important;
-}
-
-/* 交通收合樣式 */
-.transport-collapse {
-    margin: 10px 0;
-    background: #e9ecef;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.transport-collapse summary {
-    padding: 10px 15px;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #495057;
-    cursor: pointer;
-    list-style: none; /* 隱藏預設箭頭 */
-    display: flex;
-    align-items: center;
-}
-
-.transport-collapse summary::before {
-    content: '▼';
-    margin-right: 10px;
-    font-size: 0.8em;
-    transition: 0.3s;
-}
-
-.transport-collapse[open] summary::before {
-    transform: rotate(180deg);
-}
-
-    /* 交通路線流程圖樣式 */
-.route-container {
-    padding: 5px 0 5px 10px;
-    border-left: 2px solid #007bff; /* 這條是連接點的垂直線 */
-    margin-left: 10px;
-}
-
-.route-step {
-    position: relative;
-    padding-bottom: 15px;
-    padding-left: 20px;
-}
-
-.route-step:last-child {
-    padding-bottom: 0;
-}
-
-/* 站點圓點 */
-.route-dot {
-    position: absolute;
-    left: -7px; /* 剛好壓在 border-left 上 */
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border: 2px solid #007bff;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.route-dot.last {
-    background-color: #007bff; /* 最後一站實心顯示 */
-}
-
-.route-text strong {
-    display: block;
-    font-size: 1em;
-    color: #333;
-}
-
-.route-text p {
-    margin: 2px 0 0 0;
-    font-size: 0.85em;
-    color: #666;
-}
-
-.transport-info {
-    padding: 10px 15px;
-    background: #f8fafc;
-    font-size: 0.85em;
-    border-top: 1px solid #dee2e6;
-    line-height: 1.6;
-}
-
-/* 費用表格樣式 */
-.fee-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-.fee-table th, .fee-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.fee-table th {
-    background: #007bff;
-    color: white;
-}
-
-.total-row {
-    background: #fff3cd;
-    font-weight: bold;
-    font-size: 1.1em;
-}
 }
 
 
@@ -215,144 +112,4 @@ header {
 /* 景點卡片精緻化 */
 .activity {
     background-color: white;
-    border-left: 5px solid #007bff; /* 藍色線條點綴 */
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 提升質感 */
-}
-
-.activity h3 {
-    color: #495057; /* 深灰色的景點名稱 */
-    margin-top: 0;
-    font-size: 1.2em;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #e9ecef;
-}
-
-.time {
-    color: #007bff;
-    font-weight: bold;
-}
-
-/* 交通方式文字 */
-.activity p strong {
-    color: #0056b3; 
-}
-
-/* 調整側邊欄按鈕，適應較長文字 */
-#day-navigation {
-    width: 110px; /* 稍微加寬一點 */
-}
-
-.nav-day-btn .day-num {
-    font-size: 0.85em; /* 日期縮小一點點 */
-    display: block;
-    color: #666;
-}
-
-.nav-day-btn.active .day-num {
-    color: #fff;
-}
-
-.nav-day-btn .day-date {
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-
-/* ------------------------------------- */
-/* 按鈕樣式 (符合範例圖的精緻化按鈕) */
-/* ------------------------------------- */
-.map-link {
-    display: inline-block;
-    background-color: #28a745; /* 使用綠色按鈕突出地圖功能 */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 20px; /* 圓角按鈕 */
-    margin-top: 10px;
-    font-weight: bold;
-    transition: background-color 0.2s, transform 0.1s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.map-link:active {
-    background-color: #218838;
-    transform: translateY(1px); /* 點擊時下沉效果 */
-/* ========================================================= */
-/* 交通區塊專屬底色與標籤樣式 */
-/* ========================================================= */
-
-/* 整個交通收合區塊的底色 */
-.transport-collapse {
-    margin: 10px 0;
-    background: #f0f7ff; /* 淺藍色底色，讓交通區塊跳出來 */
-    border: 1px solid #cce5ff;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.transport-collapse summary {
-    background-color: #dbeafe; /* 稍微深一點的藍色標題 */
-    color: #1e3a8a;
-    padding: 10px 15px;
-    font-size: 0.95em;
-    font-weight: bold;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-/* 時間標籤 (黑底白字) */
-.time-badge {
-    display: inline-block;
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.85em;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    margin-right: 8px;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-/* 動作標籤：搭乘 (藍底白字) */
-.action-ride {
-    background-color: #0d6efd;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-/* 動作標籤：轉乘 (橘底白字) */
-.action-transfer {
-    background-color: #fd7e14;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-/* 動作標籤：步行 (灰底黑字) */
-.action-walk {
-    background-color: #e2e3e5;
-    color: #333;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-right: 5px;
-}
-}
-
-
-
+    border-left: 5px
